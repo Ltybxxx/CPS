@@ -72,7 +72,8 @@ body {
     @media (min-width:1440px) {
         left: 0;
         box-shadow: 1px 0 35px rgba(0, 0, 0, 0); /* Тень справа */
-        left: 0;
+        transition: none;
+        display: block;
     }
 
 
@@ -82,14 +83,24 @@ body {
         padding-right: 0;
 
         &--close{
+            cursor: pointer;
+            transition: all 0.25s ease;
             @media (min-width:1440px) {
                 display: none;
             }
         }
+
+        &--close:hover{
+        transform:translateY(-4px);}
+
         &--search{
             margin-left: auto;
             padding-right: 24px;
+            cursor: pointer;
+            transition: all 0.25s ease;
         }
+        &--search:hover{
+        transform:translateY(-4px);}
     }
 
 
@@ -110,18 +121,44 @@ body {
                 color:#7E7E82;
                 display: flex;
                 align-items: center;
+                cursor: pointer;
+                transition: all 0.25s ease;  
             }
+
+            &--active:hover{
+            transform:translateY(-4px);}
         }
     }
 
 
     &__contacts{
-        margin-top: auto;
+
 
         @media (min-width:1440px) {
-            margin-top: 180px;
+            margin-top: 100px;
         }
 
+
+        &--call{
+            cursor: pointer;
+            transition: all 0.25s ease;
+        }
+        &--call:hover{
+        transform:translateY(-4px);}
+
+        &--chat{
+            cursor: pointer;
+            transition: all 0.25s ease;
+        }
+        &--chat:hover{
+        transform:translateY(-4px);}
+
+        &--profile{
+            cursor: pointer;
+            transition: all 0.25s ease;
+        }
+        &--profile:hover{
+        transform:translateY(-4px);}
 
         &--phone{
             font-size: 24px;
@@ -150,7 +187,7 @@ body {
     
     font-family: TTLakes;
     margin-top: 0;
-    z-index: 1000;
+    z-index: 1005;
     position: fixed;
     top: 0;
    /// right: -150%; /* Начальная позиция за экраном слева */
@@ -257,7 +294,7 @@ body {
     
     font-family: TTLakes;
     margin-top: 0;
-    z-index: 1000;
+    z-index: 1005;
     position: fixed;
     top: 0;
    /// right: -150%; /* Начальная позиция за экраном слева */
@@ -370,6 +407,7 @@ mark {
     left: 0; /* Конечная позиция */
     font-family: TTLakes;
     margin-top: 0;
+    
 }
 
 .repair_menu.active {
@@ -562,14 +600,20 @@ mark {
         margin-left: 16px;
         white-space: nowrap;
         border: none;
+        cursor: pointer;
+        padding: 10px 20px;
+        border-radius: 6px;
+        transition: all 0.3s ease;
         &--selected{
+            background-color: #ffffff;
             border: solid 2px #B8FFEC;
             border-radius: 6px;
-            width: 246px;
+            width: auto;
             height: 40px;
             display: flex;
             align-items: center;
             justify-content: center;
+            padding: 0px 5px;
         }
     }
 }
@@ -636,6 +680,8 @@ mark {
             align-items: center;
             gap: 15px;
             padding-left: 32px;
+            cursor: pointer;
+            transition: all 0.25s ease;
 
             @media(min-width:768px) {
             padding-left: 32    px;
@@ -654,6 +700,9 @@ mark {
                 font-size: 16px;
             }
         }
+        
+        &--more:hover{
+        transform:translateY(-4px);}
 
     }
 
@@ -745,6 +794,8 @@ mark {
                         align-items: center;
                         gap: 15px;
                         padding-left: 6px;
+                        cursor: pointer;
+                        transition: all 0.25s ease;
 
                         @media (min-width:1440px) {
                            
@@ -754,8 +805,14 @@ mark {
                             font-family: TTlakes;
                             font-size: 16px;
                             font-weight: normal;
+                            
                         }
+
+                        
                     }
+
+                    &--more:hover{
+                        transform:translateY(-4px);}
 
 
             &--logo{
@@ -769,6 +826,7 @@ mark {
                 width: 240px;
                 min-width: 240px ;
                 min-height: 72px ;
+                transition: all 0.25s ease;
 
                 
                 @media (min-width:768px) {
@@ -788,8 +846,12 @@ mark {
                 &--openbutton{
                     margin-left: auto;
                     padding-right: 16px;
+                    cursor: pointer;
                 }
             }
+            
+            &--logo:hover{
+            transform:translateY(-4px);}
     }
 
 
@@ -838,6 +900,8 @@ mark {
         gap: 15px;
         padding-left: 32px;
         padding-top: 16px;
+        cursor: pointer;
+        transition: all 0.25s ease;
 
         @media (min-width:320px) {
             display: none;
@@ -853,6 +917,9 @@ mark {
             font-weight: normal;
         }
     }
+
+    &--more:hover{
+        transform:translateY(-4px);}
 
     &--catalog::-webkit-scrollbar {width: 0}
     &--catalog{
@@ -887,6 +954,7 @@ mark {
                 width: 230px;
                 min-width: 230px;
                 align-self: flex-start;
+                transition: all 0.25s ease;
 
                 p{
                     padding-left: 16px;
@@ -905,11 +973,15 @@ mark {
             }
 
             &--openbutton{
+                cursor: pointer;
                 align-self: flex-end;
                 padding-bottom: 16px;
                 padding-right: 16px;
                 margin-left: auto;
             }
+
+            &--text:hover{
+            transform:translateY(-4px);}
     }
 
 }
@@ -1103,7 +1175,17 @@ table{
 .last{
     display: flex;
     justify-content: end;
+    
+    img{
+    cursor: pointer;
+    transition: all 0.25s ease;
+    }
+
+    img:hover{
+        transform:translateY(-4px);}
 }
+
+
 
 .about_price{
     font-family: TTLakes;
@@ -1126,6 +1208,8 @@ table{
         line-height: 24px;
         font-size: 16px;
         font-weight: normal;
+        cursor: pointer;
+        transition: all 0.25s ease;
         @media(min-width:320px){
             width: 290px;
         }
@@ -1142,6 +1226,9 @@ table{
             
         }
     }
+
+    h4:hover{
+        transform:translateY(-4px);}
 }
 
 footer{
